@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
 body {
     font-family: "Roboto";
     padding: 0;
@@ -11,14 +17,16 @@ body {
     background-color: #1f2937;
     color:white;
     padding: 0 12%;
+    padding-top: 10px;
 }
 
 #logo{
     display: flex;
-    color:#F9FAF8;
     font-size: 24px;
     justify-content: center;
     align-items: center;
+    height: 60px;
+    width: 60px;
 }
 
 .header1{
@@ -58,16 +66,61 @@ ul{
     padding-right: 30px;
 }
 
-.button{
-    background-color: #3882F6;
-    color: white;
-    width: 15%;
-    height: 30px;
-    border-radius: 8px;
-    border-width: 0;
-    margin-top: 15px;
-    width: 100px;
-    height: 30px;
+.button1 {
+    width: 130px;
+    height:40px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #3882F6;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: 550;
+    font-size: 15px;
+}
+
+.button1:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button1:active {
+    color: black;
+}
+
+.button1:active:after {
+    background: transparent;
+}
+
+.button1:hover:before {
+    opacity: 1;
+}
+
+.button1:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3882F6;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 
 .heroright img {
@@ -139,11 +192,126 @@ img {
     padding-right: 350px;
     font-weight: 900;
     font-family: "Roboto";
+    font-size: 20px;
+    color:#1f2937;
 }
 
+.call{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.mavi{
+    background-color: #3882F6;
+    font-family: "Roboto";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px;
+    border-radius: 8px;
+    color: #f9faf8;
+    width: 650px;
+    height: 120px;
+    padding: 15px 12%;
+}
 
-/* Burdan basla yazmaga */
+html, body {
+    height: 100%;
+  }
+  
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #button2 {
+    min-width: 130px;
+    min-height: 50px;
+    display: inline-flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #f9faf8;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+    #button2::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(125px + 12px);
+    min-height: calc(45px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0,255,203,.64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+  
+  #button2:hover, 
+  #button2:focus {
+    color: #313133;
+    transform: translateY(-6px);
+  }
+  
+  #button2:hover::before, 
+  #button2:focus::before {
+    opacity: 1;
+  }
+  
+  
+  #button2:hover::after, 
+  #button2:focus::after {
+    animation: none;
+    display: none;
+}
+
+.action{
+    display: flex;
+    flex-direction: column;
+}
+
+#call{
+    margin-bottom: 0;  
+    color: white; 
+}
+
+#subtext{
+    margin-top: 0;
+    color: #ccd0d7;
+}
+    
+.footer{
+    display: flex;
+    background-color:#1F2937;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: #d9dbd6e0;
+    height: 100px;
+    font-size: 20px;
+    font-family: "Roboto";
+}
+
 
 
 
