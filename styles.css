@@ -314,13 +314,6 @@ html, body {
 
 
 
-
-
-
-
-
-
-
 /* ---------------------- */
 /* width */
 ::-webkit-scrollbar {
@@ -338,6 +331,12 @@ html, body {
   ::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 10px;
+    transition: width 0.2s ease; /* Smooth transition for growth */
   }
-
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    width: 12px; /* Increase the width on hover */
+    background: #777; /* Optional: Change the color for better visibility */
+  }
 /* ---------------------- */
